@@ -1,0 +1,5 @@
+<?php
+use function Lightroom\Templates\Functions\{controller};
+use function Lightroom\Requests\Functions\{session, cookie, get};
+use function Lightroom\Common\Functions\csrf;
+?><div id="property-page" style="margin-top: 110px;"></div>

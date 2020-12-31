@@ -1,0 +1,63 @@
+{
+    "stylesheet": [
+        "moorexa.css",
+        "{CDN_CSS_URL}/w3.css",
+        "{CDN_CSS_URL}/page.css",
+        "{CDN_CSS_URL}/mat.css",
+        "{CDN_CSS_URL}/semantic.min.css",
+        "{CDN_CSS_URL}/space_app.css",
+        "{CDN_CSS_URL}/draw.css",
+        "{CDN_CSS_URL}/datepicker.min.css",
+        "{CDN_CSS_URL}/croppie.css",
+        "{CDN_CSS_URL}/huebee.min.css",
+        "{CDN_CSS_URL}/morris.css",
+        "{CDN_CSS_URL}/pulse.css",
+        "{CDN_CSS_URL}/line-awesome.min.css",
+        "{CDN_FONT_URL}/lato/stylesheet.css",
+        "{CDN_FONT_URL}/quicksand/stylesheet.css",
+        "{CDN_FONT_URL}/montserrat/stylesheet.css",
+        "{CDN_FONT_URL}/nunito/stylesheet.css",
+        "{CDN_FONT_URL}/varelaround/stylesheet.css"
+    ],
+
+    "stylesheet@bundle" : [
+
+    ],
+    
+    "scripts": [
+        "{CDN_JS_URL}/jquery.min.js",
+        "axios.min.js",
+        "{LOCAL_JS}/draw.js",
+        "{LOCAL_JS}/page.js",
+        "{LOCAL_JS}/navigate.js",
+        "{LOCAL_JS}/event.js",
+        "{CDN_JS_URL}/event.js",
+        "{CDN_JS_URL}/worker.js",
+        "{CDN_JS_URL}/functions.js",
+        "{CDN_JS_URL}/router.js",
+        "{CDN_JS_URL}/messaging.js",
+        "{CDN_JS_URL}/semantic.min.js",
+        "{CDN_JS_URL}/datepicker.min.js",
+        "{CDN_JS_URL}/croppie.min.js",
+        "{CDN_JS_URL}/upload.js",
+        "{CDN_JS_URL}/raphael.min.js",
+        "{CDN_JS_URL}/morris.min.js",
+        "{CDN_JS_URL}/jquery.peity.min.js",
+        "{CDN_JS_URL}/easypiechart.js",
+        "{CDN_JS_URL}/materialize/initial.js",
+        "{CDN_JS_URL}/materialize/global.js",
+        "{CDN_JS_URL}/materialize/component.js",
+        "{CDN_JS_URL}/materialize/cash.js",
+        "{CDN_JS_URL}/materialize/carousel.js",
+        "{CDN_JS_URL}/materialize/animation.js",
+        "{CDN_JS_URL}/materialize/anime.min.js",
+        "{CDN_JS_URL}/materialize/toasts.js",
+        "{CDN_JS_URL}/materialize/collapsible.js",
+        "https://js.paystack.co/v1/inline.js",
+        "{CDN_JS_URL}/pay.js"
+    ],
+
+    "scripts@bundle" : [
+        
+    ]
+}

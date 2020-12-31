@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-us" data-property="<?php echo $property; ?>">
+<head> 
+	<title>Manage your listed property : {$customer->Name}</title>
+
+	<!-- meta tags -->
+	@partial('meta-tags', ['package' => $package])
+
+	<!-- link tags -->
+	<link rel="canonical" href="{func()->url($package->getUrl())}">
+
+	<!-- favicon -->
+	<link rel="icon" type="image/png" href="<?=STORAGE_API?>/logo/favicon.png" sizes="32x32">
+	
+	<!-- css -->
+    {assets()->loadCss()}
+    
+    <!-- load flags -->
+	<style type="text/css">
+		i.flag:not(.icon)::before{background-image: url('<?=CDN_URL?>/themes/default/assets/images/flags.png');}
+	</style>
+  
+</head>
+	
+<body style="background-color: white;">
+
+    {$style = 'style="background-color: '.$site->PrimaryColor.'; z-index: 999999; position: fixed; top: 0px; width: 100%;"';}
+
+    <input id="property-id" type="hidden" value="<?php echo $property; ?>"/>
+
+        <div class="w3-card-2" {$style}>
+            <div class="w3-row main-navigation">
+                <a href="{func()->url()}?endsession">
+                    <div class="property-menu pad-1 l-width-t" >
+                        <div class="pad-1 align-c">
+                            <h4>
+                                <i class="la la-globe" style="color: rgba(255,255,255,0.3);"></i>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <a id="home-anchor" href="#property">
+                    <div class="property-menu pad-1">
+                        <div class="pad-1 align-c">
+                            <h4>
+                                <i class="la la-home"></i>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <a href="#reservation">
+                    <div class="property-menu pad-1">
+                        <div class="align-c pad-1">
+                            <h4>
+                                <i class="la la-calendar"></i>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <a href="#messaging">
+                    <div class="property-menu pad-1">
+                        <div class="align-c pad-1">
+                            <h4>
+                                <i class="la la-envelope-open"></i>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <a href="#rooms">
+                    <div class="property-menu pad-1">
+                        <div class="align-c pad-1">
+                            <h4>
+                                <i class="la la-bed"></i>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <a href="#staff">
+                    <div class="property-menu pad-1">
+                        <div class="align-c pad-1">
+                            <h4>
+                                <i class="la la-user"></i>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <a href="#discount">
+                    <div class="property-menu pad-1">
+                        <div class="align-c pad-1">
+                            <h4>
+                                <i class="la la-percent"></i>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <!-- <a href="#reports">
+                    <div class="property-menu pad-1">
+                        <div class="align-c pad-1">
+                            <h4>
+                                <i class="la la-pie-chart"></i>
+                            </h4>
+                        </div>
+                    </div>
+                </a> -->
+                <a href="#settings">
+                    <div class="property-menu pad-1">
+                        <div class="align-c pad-1">
+                            <h4>
+                                <i class="la la-cog"></i>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+                <a href="#sign-out">
+                    <div class="property-menu pad-1" style="float: right;">
+                        <div class="align-c pad-1">
+                            <h4>
+                                <i class="la la-sign-out-alt"></i>
+                            </h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="min-menue-con">
+
+            </div>
+        </div>

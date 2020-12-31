@@ -1,0 +1,12 @@
+<?php
+use function Lightroom\Templates\Functions\{controller};
+use function Lightroom\Requests\Functions\{session, cookie, get};
+use function Lightroom\Common\Functions\csrf;
+?><div id="page-1"></div>
+
+<div class="iframe-wrapper">
+    <div class="iframe-container">
+        <button class="close-button">×</button>
+        <iframe src="<?=constant('TRIP_MATA_URL')?>/listing"></iframe>
+    </div>
+</div>

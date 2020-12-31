@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+        <title>Sign in to TripMata Listing Dashboard</title>
+
+        <link rel='stylesheet' type='text/css' href='<?=FRONTDESK_CDN?>/css/w3.css'/>
+        <link rel='stylesheet' type='text/css' href='<?=FRONTDESK_CDN?>/css/mat.css'/>
+        <link rel='stylesheet' type='text/css' href='<?=FRONTDESK_CDN?>/css/semantic.min.css'/>
+        <link rel='stylesheet' type='text/css' href='<?=FRONTDESK_CDN?>/css/space_app.css'/>
+        <link rel='stylesheet' type='text/css' href='<?=FRONTDESK_CDN?>/css/draw.css'/>
+
+        <link rel='stylesheet' type='text/css' href='<?=FRONTDESK_CDN?>/fonts/lato/stylesheet.css'/>
+        <link rel='stylesheet' type='text/css' href='<?=FRONTDESK_CDN?>/fonts/quicksand/stylesheet.css'/>
+        <link rel='stylesheet' type='text/css' href='<?=FRONTDESK_CDN?>/fonts/comfortaa/stylesheet.css'/>
+        <link rel='stylesheet' type='text/css' href='<?=FRONTDESK_CDN?>/fonts/montserrat/stylesheet.css'/>
+        <link rel='stylesheet' type='text/css' href='<?=FRONTDESK_CDN?>/fonts/nunito/stylesheet.css'/>
+        <link rel='icon' type='image/png' href='<?=FRONTDESK_CDN?>/../../logo/favicon.png'/>
+
+        <script type="application/javascript">var api = '<?=CLIENT_SERVICE_API?>', url = '<?=func()->url()?>'; </script>
+        <script type='application/javascript' src='<?=FRONTDESK_CDN?>/js/jquery.min.js'></script>
+        <script type='application/javascript' src='<?=FRONTDESK_CDN?>/js/functions.js'></script>
+        <script type='application/javascript' src='<?=FRONTDESK_CDN?>/js/semantic.min.js'></script>
+        <script type='application/javascript' src='<?=func()->url("static/js/login.js")?>'></script>
+    </head>
+    <body style="background-image: url('<?=FRONTDESK_CDN?>/images/back.png')">
+        <div style='margin-top: 100px;'>
+            <form action='' method='post' onsubmit='return login()'>
+                <div class='l-width-3' style='margin: auto;'>
+                    <div class='l-width-7' style='margin: auto;'>   
+                        <div class='align-c'>
+                            <img src='<?=CDN_URL?>/images/planet.png' style='width: 100px;'/>
+                        </div>
+                        <div class='margin-t-2 margin-b-2 align-c'>
+                            <h2 style='font-family: comfortaalight;'><span id='property-name'>Tripmata</span> Listing Partner</h2>
+                        </div>
+                        <div class='ui fluid input' style='margin-top: 20px;'>
+                            <input id='user' class='wix-textbox' type='text' placeholder='User name'/>
+                        </div>
+                        <div class='ui fluid input' style='margin-top: 10px;'>
+                            <input id='password' class='wix-textbox' type='password' placeholder='Password'/>
+                        </div>
+                        <br/><br/>
+                        <button id='lg-btn' class='ui blue button' style='font-family: comfortaalight;'>
+                            <i class='sign in icon'></i> Sign in
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

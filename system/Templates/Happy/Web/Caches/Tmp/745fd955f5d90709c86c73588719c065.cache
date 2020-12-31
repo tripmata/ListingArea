@@ -1,0 +1,31 @@
+<?php
+use function Lightroom\Templates\Functions\{controller};
+use function Lightroom\Requests\Functions\{session, cookie, get};
+use function Lightroom\Common\Functions\csrf;
+?><input id="user-bank" type="hidden" value="<?php echo $customer->Bank?>"/>
+<input id="account-name" type="hidden" value="<?php echo $customer->Accountname?>"/>
+<input id="account-number" type="hidden" value="<?php echo $customer->Accountnumber?>"/>
+
+<input id="customer-name" type="hidden" value="<?php echo $customer->Name; ?>"/>
+<input id="customer-sname" type="hidden" value="<?php echo $customer->Surname; ?>"/>
+<input id="customer-phone" type="hidden" value="<?php echo $customer->Phone; ?>"/>
+<input id="customer-email" type="hidden" value="<?php echo $customer->Email; ?>"/>
+<input id="customer-country" type="hidden" value="<?php echo $customer->Country; ?>"/>
+<input id="customer-state" type="hidden" value="<?php echo $customer->State; ?>"/>
+<input id="customer-city" type="hidden" value="<?php echo $customer->City; ?>"/>
+
+<input id="system-font" type="hidden" value="<?php echo $site->TextFont; ?>"/>
+
+<input id="listed-property" type="hidden" value="<?php echo Convert::ToInt($customer->hasProperty); ?>"/>
+<input id="listed-vehicle" type="hidden" value="<?php echo Convert::ToInt($customer->hasVehicle); ?>"/>
+<input id="leased" type="hidden" value="<?php echo Convert::ToInt($customer->hasLease); ?>"/>
+<input id="corperate" type="hidden" value="<?php echo Convert::ToInt($customer->hasLease); ?>"/>
+
+<!-- javascripts -->
+<?=assets()->loadJs()?>
+
+<!-- end body,html -->
+</body>
+</html>
+
+<?=\Happy\Directives::runDirective(true,'setdefault')?>

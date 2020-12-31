@@ -1,0 +1,136 @@
+<section class="property-settings">
+    <aside class="custom-form">
+        <!-- property detail -->
+        <section class="custom-form-group">
+            <h1>Property Detail</h1>
+
+            <div class="input-element">
+                <label for="property-name">
+                    <span class="label-title"><b>*</b> Property Name</span>
+                    <input id="property-name" type="text" placeholder="Change your property name" readonly disabled
+                    />
+                </label>
+            </div>
+
+            <div class="input-element">
+                <label for="property-description">
+                    <span class="label-title"><b>*</b> Property Description</span>
+                    <textarea id="property-description" placeholder="Change your property description" readonly disabled></textarea>
+                </label>
+            </div>
+
+            <div class="input-element">
+                <label for="property-type">
+                    <span class="label-title"><b>*</b> Property Type</span>
+                    <select id="property-type" aria-readonly="true" disabled>
+                        <option value=''>Select type</option>
+                        <option value='hotel'>Hotel</option>
+                        <option value='b&b'>B&B</option>
+                        <option value='condor'>Condor</option>
+                        <option value='apartment'>Apartment</option>
+                        <option value='studio'>Studio</option>
+                        <option value='boutique'>Boutique</option>
+                    </select>
+                </label>
+            </div>
+        </section>
+
+        <!-- property location -->
+        <section class="custom-form-group">
+            <h1>Property Location</h1>
+
+            <div class="input-element">
+                <label for="property-country">
+                    <span class="label-title"><b>*</b> Country</span>
+                    <div id="country-wrapper"></div>
+                </label>
+            </div>
+
+            <div class="input-element">
+                <label for="property-state">
+                    <span class="label-title"><b>*</b> State</span>
+                    <select id='property-state' class='ui fluid search dropdown' disabled>
+                    <option value=''>Select or add state</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="input-element">
+                <label for="property-city">
+                    <span class="label-title"><b>*</b> City</span>
+                    <select id='property-city' class='ui fluid search dropdown' disabled>
+                    <option value=''>Select or add city</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="input-element">
+                <label for="property-address">
+                    <span class="label-title"><b>*</b> Property Address</span>
+                    <textarea id="property-address" placeholder="Change your property address" disabled></textarea>
+                </label>
+            </div>
+        </section>
+
+        <!-- property contact information -->
+        <section class="custom-form-group">
+            <h1>Contact Information</h1>
+
+            <div class='widget pad-1' style='border: 3px solid rgb(245,245,245);'>
+               <span style='font-weight: bold;'>Phone</span>
+                <br/><br/>
+                <p style='color: dimgray; font-family: Lato; line-height: 180%;'>
+                    Here you can add multiple help lines for reservations, support, booking, etc.
+                </p>
+                <div class='contact-form' data-key="phone"><input type='text' data-key="name" id='contact-name' placeholder='Contact Name'/> <input type='tel' data-key="value" id='contact-phone' placeholder='Contact Phone. e.g 0801...'/> <button type='button' id='contact-btn-phone'><i class='add icon'></i></button></div>
+                <div class='contact-body' data-key="phone-contact"></div>
+            </div>
+
+            <div class='widget pad-1' style='border: 3px solid rgb(245,245,245);'>
+                <span style='font-weight: bold;'>Email</span>
+                 <br/><br/>
+                 <p style='color: dimgray; font-family: Lato; line-height: 180%;'>
+                     Here you can add multiple email addresses for reservations, support, booking, etc.
+                 </p>
+                 <div class='contact-form' data-key="email"><input type='text' data-key="name" id='email-name' placeholder='Email Name'/> <input type='email' data-key="value" id='email-address' placeholder='Email Address. e.g support@..'/> <button type='button' id='contact-btn-email'><i class='add icon'></i></button></div>
+                 <div class='contact-body' data-key="email-contact"></div>
+             </div>
+             
+        </section>
+
+        <!-- property facilities -->
+        <section class="custom-form-group">
+            <h1 class="header-with-form"><span>Property Facilities</span> 
+            <div class="custom-header-form">
+                <input class="custom-header-input" id="facility-name" type="text" placeholder="Facility Name"/>
+                <button type="button" class="add-facility-btn" id="facility-name-btn"><i class="add icon"></i></button>
+            </div></h1>
+            <div id="property-facilities" class="checkbox-list"></div>
+        </section>
+
+        <!-- property rules -->
+        <section class="custom-form-group">
+            <h1>Property Rules</h1>
+
+            <div id="property-rules"></div>
+        </section>
+    </aside>
+
+    <aside class="property-gallery">
+        <section class="custom-form-group">
+            <h1>Property Gallery</h1>
+
+            <div id="property-gallery"></div>
+        </section>
+    </aside>
+</section>
+
+<!-- save footer section -->
+<footer class="save-container">
+    <section class="save-container-inner l-width-7 w3-row">
+        <button class="save-button" id="save-button" type="button" onclick="savePropertySettings(event);">
+            <i class="save icon"></i>
+            <span>Save changes</span>
+        </button>
+    </section>
+</footer>

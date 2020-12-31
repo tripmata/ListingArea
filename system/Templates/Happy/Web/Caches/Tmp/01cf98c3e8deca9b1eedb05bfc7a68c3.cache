@@ -1,0 +1,94 @@
+<?php
+use function Lightroom\Templates\Functions\{controller};
+use function Lightroom\Requests\Functions\{session, cookie, get};
+use function Lightroom\Common\Functions\csrf;
+?><!DOCTYPE html>
+<html lang="en-us">
+<head> 
+	<title>Manage your listing : <?=$customer->Name?></title>
+
+	<!-- meta tags -->
+	<?=\Happy\Directives::runDirective(true,'partial','meta-tags', ['package' => $package])?>
+
+	<!-- link tags -->
+	<link rel="canonical" href="<?=func()->url($package->getUrl())?>">
+
+	<!-- favicon -->
+	<link rel="icon" type="image/png" href="<?=STORAGE_API?>/logo/favicon.png" sizes="32x32">
+	
+	<!-- css -->
+	<?=assets()->loadCss()?>
+	
+	<!-- set header as default -->
+	<?=\Happy\Directives::runDirective(true,'setdefault')?>
+  
+</head>
+	
+<body>
+
+	<?php $style = 'style="background-color: '.$site->PrimaryColor.';"';?>
+
+	<div id="menu-1" <?=$style?>>
+		<a href="<?=constant('TRIP_MATA_URL')?>">
+			<div class="partner-menu">
+				<div class="pad-1 align-c">
+					<h4>
+						<i class="la la-globe" style="color: rgba(255,255,255,0.3);"></i>
+					</h4>
+				</div>
+			</div>
+		</a>
+		<a id="home-anchor" href="#home">
+			<div class="partner-menu" style="margin-top: 0px;">
+				<div class="pad-1 align-c">
+					<h4>
+						<i class="la la-home"></i>
+					</h4>
+				</div>
+			</div>
+		</a>
+		<a href="#wallet">
+			<div class="partner-menu">
+				<div class="pad-1 align-c">
+					<h4>
+						<i class="la la-wallet"></i>
+					</h4>
+				</div>
+			</div>
+		</a>
+		<a href="#analytics">
+			<div class="partner-menu">
+				<div class="pad-1 align-c">
+					<h4>
+						<i class="la la-pie-chart"></i>
+					</h4>
+				</div>
+			</div>
+		</a>
+		<a href="#settings">
+			<div class="partner-menu">
+				<div class="pad-1 align-c">
+					<h4>
+						<i class="la la-cog"></i>
+					</h4>
+				</div>
+			</div>
+		</a>
+		<a href="#sign-out">
+			<div class="partner-menu">
+				<div class="pad-1 align-c">
+					<h4>
+						<i class="la la-sign-out-alt"></i>
+					</h4>
+				</div>
+			</div>
+		</a>
+
+		<div style="bottom: 10px; position: absolute; width: 100%;">
+			<div class="pad-1 align-c">
+				<h4 style="color: rgba(255,255,255,0.5); text-align: center; ">
+					<i class="la la-signal" style="font-size: 20px;"></i>
+				</h4>
+			</div>
+		</div>
+	</div>
