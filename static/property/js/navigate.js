@@ -66,11 +66,133 @@
 
     }
 
+    function DrawNav(){
+        $('#partnernav__container').html(
+            "<div>"+
+                "<a href='/?endsession' class='partnernav__link partnernav__logo'>"+
+                    "<i class='la la-globe partnernav__icon' style='color: rgba(255,255,255,0.3);'></i>"+
+                    "<span class='partnernav__logo-name'>Return</span>"+
+                "</a>"+
+
+                "<div class='partnernav__list'>"+
+                    "<div class='partnernav__items'>"+
+
+                        "<a href='#property' class='partnernav__link active'>"+
+                            "<i class='bx bx-home partnernav__icon' ></i>"+
+                            "<span class='partnernav__name'>Dashboard</span>"+
+                        "</a>"+
+
+                        "<div class='partnernav__dropdown'>"+
+                            "<a href='#' class='partnernav__link'>"+
+                                "<i class='bx bx-calendar partnernav__icon' ></i>"+
+                                "<span class='partnernav__name'>Booking Management</span>"+
+                                "<i class='bx bx-chevron-down partnernav__icon partnernav__dropdown-icon'></i>"+
+                            "</a>"+
+
+                            "<div class='partnernav__dropdown-collapse'>"+
+                                "<div class='partnernav__dropdown-content'>"+
+                                    "<a href='#reservation' class='partnernav__dropdown-item'>Reservations</a>"+
+                                    "<a href='#reservation/customers' class='partnernav__dropdown-item'>Customers</a>"+
+                                    "<a href='#reservation/lodging' class='partnernav__dropdown-item'>In-house Guest</a>"+
+                                    "<a href='"+phpvars.FRONTDESK_MANAGER+"' class='partnernav__dropdown-item' target='_blank'>Front desk</a>"+
+                                    "<a href='#reservation/avaliability' class='partnernav__dropdown-item'>Avaliability</a>"+
+                                "</div>"+
+                            "</div>"+
+                        "</div>"+
+
+                        "<a href='#' class='partnernav__link'>"+
+                            "<i class='bx bx-trip partnernav__icon' ></i>"+
+                            "<span class='partnernav__name'>Channel Manager</span>"+
+                        "</a>"+
+                        
+                        "<div class='partnernav__dropdown'>"+
+                            "<a href='#' class='partnernav__link'>"+
+                                "<i class='bx bxs-coupon partnernav__icon' ></i>"+
+                                "<span class='partnernav__name'>Discount & Coupon</span>"+
+                                "<i class='bx bx-chevron-down partnernav__icon partnernav__dropdown-icon'></i>"+
+                            "</a>"+
+                            "<div class='partnernav__dropdown-collapse'>"+
+                                "<div class='partnernav__dropdown-content'>"+
+                                    "<a href='#discount' class='partnernav__dropdown-item'>Discount</a>"+
+                                    "<a href='#coupon' class='partnernav__dropdown-item'>Coupon</a>                                       "+
+                                "</div>"+
+                            "</div>"+
+                        "</div>"+
+
+                        "<div class='partnernav__dropdown'>"+
+                            "<a href='#' class='partnernav__link'>"+
+                                "<i class='bx bx-bed partnernav__icon' ></i>"+
+                                "<span class='partnernav__name'>Room Setting</span>"+
+                                "<i class='bx bx-chevron-down partnernav__icon partnernav__dropdown-icon'></i>"+
+                            "</a>"+
+
+                            "<div class='partnernav__dropdown-collapse'>"+
+                                "<div class='partnernav__dropdown-content'>"+
+                                    "<a href='#rooms' class='partnernav__dropdown-item'>Category</a>"+
+                                    "<a href='#rooms/number' class='partnernav__dropdown-item'>List</a>"+
+                                    "<a href='#rooms' class='partnernav__dropdown-item'>Inventory</a>"+
+                                    "<a href='#rooms' class='partnernav__dropdown-item'>Extra Service</a>"+
+                                "</div>"+
+                            "</div>"+
+                        "</div>"+
+
+                        "<div class='partnernav__dropdown'>"+
+                            "<a href='#' class='partnernav__link'>"+
+                                "<i class='bx bx-user partnernav__icon' ></i>"+
+                                "<span class='partnernav__name'>Admin Users</span>"+
+                                "<i class='bx bx-chevron-down partnernav__icon partnernav__dropdown-icon'></i>"+
+                            "</a>"+
+
+                            "<div class='partnernav__dropdown-collapse'>"+
+                                "<div class='partnernav__dropdown-content'>"+
+                                    "<a href='#staff' class='partnernav__dropdown-item'>All Staff</a>"+
+                                    "<a href='#staff/roles' class='partnernav__dropdown-item'>Group Role</a>"+
+                                    "<a href='#staff/list' class='partnernav__dropdown-item'>Staff List</a>"+
+                                    "<a href='#staff/departments' class='partnernav__dropdown-item'>Department</a>"+
+                                "</div>"+
+                            "</div>"+
+                        "</div>"+
+
+                        "<div class='partnernav__dropdown'>"+
+                            "<a href='#' class='partnernav__link'>"+
+                                "<i class='bx bx-pie-chart-alt partnernav__icon' ></i>"+
+                                "<span class='partnernav__name'>Reports</span>"+
+                                "<i class='bx bx-chevron-down partnernav__icon partnernav__dropdown-icon'></i>"+
+                            "</a>"+
+
+                            "<div class='partnernav__dropdown-collapse'>"+
+                                "<div class='partnernav__dropdown-content'>"+
+                                    "<a href='#reports' class='partnernav__dropdown-item'>Revenue</a>"+
+                                    "<a href='#reports' class='partnernav__dropdown-item'>Checkin</a>"+
+                                    "<a href='#reports' class='partnernav__dropdown-item'>Occupancy</a>"+
+                                    "<a href='#reports' class='partnernav__dropdown-item'>Inventory</a>"+
+                                "</div>"+
+                            "</div>"+
+                        "</div>"+
+
+                        "<a href='#settings' class='partnernav__link'>"+
+                            "<i class='bx bx-cog partnernav__icon'></i>"+
+                            "<span class='partnernav__name'>Settings</span>"+
+                        "</a>"+
+                        
+
+                    "</div>"+
+                "</div>"+
+            "</div>"+
+
+            "<a href='#sign-out' class='partnernav__link partnernav__logout'>"+
+                "<i class='bx bx-log-out partnernav__icon' ></i>"+
+                "<span class='partnernav__name'>Sign out</span>"+
+            "</a>"
+        );
+    }
+
     function FirstRun() {
         let hash = location.hash;
 
         let page = hash.split("/")[0];
 
+        DrawNav()
         if (page === "") {
                 location.hash = "#property";
             DrawProperty();
@@ -169,7 +291,7 @@
 
         $("#min-menue-con").html("");
         $("#property-page").html(
-            "<div class='l-width-7' style='margin: auto;'>" +
+            "<div class='' style='margin: auto;'>" +
             "<div class='pad-2' style=''>" +
             "<div class='w3-row'>" +
             "<div class='w3-col l8 m8 s12'>" +

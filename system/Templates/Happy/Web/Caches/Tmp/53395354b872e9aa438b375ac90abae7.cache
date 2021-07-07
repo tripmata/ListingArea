@@ -2,4 +2,16 @@
 use function Lightroom\Templates\Functions\{controller};
 use function Lightroom\Requests\Functions\{session, cookie, get};
 use function Lightroom\Common\Functions\csrf;
-?><div id="property-page" style="margin-top: 110px;"></div>
+?><!-- <div id="property-page" style="margin-top: 110px;"></div> -->
+
+
+ <!--========== NAV ==========-->
+ <div class="partnernav" id="navbar">
+    <section class="partnernav__container" id='partnernav__container'>       
+    </section>
+</div>
+
+<!--========== CONTENTS ==========-->
+<main class='property_wrapper'>
+    <section id="property-page"></section>
+</main>

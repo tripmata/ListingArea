@@ -16,6 +16,9 @@ use function Lightroom\Common\Functions\csrf;
 	<!-- favicon -->
 	<link rel="icon" type="image/png" href="<?=STORAGE_API?>/logo/favicon.png" sizes="32x32">
 	
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
 	<!-- css -->
     <?=assets()->loadCss()?>
     
@@ -32,7 +35,7 @@ use function Lightroom\Common\Functions\csrf;
 
     <input id="property-id" type="hidden" value="<?php echo $property; ?>"/>
 
-        <div class="w3-card-2" <?=$style?>>
+        <!-- <div class="w3-card-2" <?=$style?>>
             <div class="w3-row main-navigation">
                 <a href="<?=func()->url()?>?endsession">
                     <div class="property-menu pad-1 l-width-t" >
@@ -128,4 +131,20 @@ use function Lightroom\Common\Functions\csrf;
             <div id="min-menue-con">
 
             </div>
+        </div> -->
+
+
+
+    <!--========== HEADER ==========-->
+    <header class="partner__header">
+        <div class="header__container">
+
+            <a href="#" class="header__logo">Tripmata</a>
+
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle" style='color: #fff;'></i>
+            </div>
         </div>
+    </header>
+
+       
