@@ -3269,13 +3269,12 @@
 		
 		postJson("hms-admin/worker", function(data, status){
 			if(status == "done"){
-				let room_categories = JSON.parse(data);
+				let d = JSON.parse(data);
 				if(d.status == "success"){
-					localStorage.setItem('roomcategory_count', room_categories.data.length);
+					localStorage.setItem('roomcategory_count', d.data.length);
 				}else{
 					localStorage.setItem('roomcategory_count', 0);
 				}
-
 			}
 
 		}, category_request);
