@@ -82,10 +82,15 @@
                             "<span class='partnernav__name'>Dashboard</span>"+
                         "</a>"+
 
+                        "<a href='"+phpvars.FRONTDESK_MANAGER+"' target='_blank' class='partnernav__link'>"+
+                            "<i class='bx bx-bed partnernav__icon' ></i>"+
+                            "<span class='partnernav__name'>FrontDesk Manager</span>"+
+                        "</a>"+
+
                         "<div class='partnernav__dropdown'>"+
                             "<a href='#' class='partnernav__link'>"+
                                 "<i class='bx bx-calendar partnernav__icon' ></i>"+
-                                "<span class='partnernav__name'>Booking Management 1</span>"+
+                                "<span class='partnernav__name'>Booking Management</span>"+
                                 "<i class='bx bx-chevron-down partnernav__icon partnernav__dropdown-icon'></i>"+
                             "</a>"+
 
@@ -94,16 +99,10 @@
                                     "<a href='#reservation' class='partnernav__dropdown-item'>Reservations</a>"+
                                     "<a href='#reservation/customers' class='partnernav__dropdown-item'>Customers</a>"+
                                     "<a href='#reservation/lodging' class='partnernav__dropdown-item'>In-house Guest</a>"+
-                                    "<a href='"+phpvars.FRONTDESK_MANAGER+"' class='partnernav__dropdown-item' target='_blank'>Front desk</a>"+
                                     "<a href='#reservation/avaliability' class='partnernav__dropdown-item'>Avaliability Manager</a>"+
                                 "</div>"+
                             "</div>"+
                         "</div>"+
-
-                        "<a href='"+phpvars.FRONTDESK_MANAGER+"' target='_blank' class='partnernav__link'>"+
-                            "<i class='bx bx-calendar partnernav__icon' ></i>"+
-                            "<span class='partnernav__name'>Booking Manager</span>"+
-                        "</a>"+
 
                         "<a href='#reservation/avaliability' target='_blank' class='partnernav__link'>"+
                             "<i class='bx bx-usb partnernav__icon' ></i>"+

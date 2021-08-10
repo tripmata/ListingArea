@@ -283,16 +283,21 @@
 					if (d.reviews.length > 0) {
 						d.reviews.forEach(review => {
 							let { Created } = review;
+							console.log(review.Customer);
+							let customerName = review.Customer.Name + ' ' + review.Customer.Surname;
+							let readMore = review.Body.length > 100 ? '<a href="javascript:void(0)" onclick="expandReview(event)" data-text="'+review.Body+'" style="color:#fb3507; text-decoration:underline; display:block; font-size:12px; margin-top:-10px;">Read more..</a>' : '';
 							reviewHtml += "<div class='review_item'>"+
 												"<div class='review_bio'>"+
 													"<div>"+(Number(review.Star) < 10 ? review.Star+'.0' : review.Star)+"</div>"+
-													"<span class='center_vertical'>"+(review.Customer.Accountname || 'Anonymous')+"</span>"+
+													"<span class='center_vertical'>"+(customerName || 'Anonymous')+"</span>"+
 												"</div>"+
 	
-												"<div class='review_text center_vertical'>"+
-													"<p style='white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>"+
-													review.Body+
+												"<div class='review_text center_vertical' style='align-items: flex-start;\
+												flex-direction: column;'>"+
+													"<p>"+
+													review.Body.substring(0, 100)+
 													"</p>"+
+													readMore +
 												"</div>"+
 	
 												"<div class='review_date'>"+

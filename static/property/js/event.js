@@ -20731,3 +20731,9 @@ function processRefund(e, modal)
 		id : e
 	});
 }
+
+// oad review in a modal
+function expandReview(e)
+{
+	ShowModal(e.target.getAttribute('data-text'), 'Review');
+}
