@@ -97,7 +97,7 @@
                             "<div class='partnernav__dropdown-collapse'>"+
                                 "<div class='partnernav__dropdown-content'>"+
                                     "<a href='#reservation' class='partnernav__dropdown-item'>Reservations</a>"+
-                                    "<a href='#reservation/customers' class='partnernav__dropdown-item'>Customers</a>"+
+                                    // "<a href='#reservation/customers' class='partnernav__dropdown-item'>Customers</a>"+
                                     "<a href='#reservation/lodging' class='partnernav__dropdown-item'>In-house Guest</a>"+
                                     "<a href='#reservation/avaliability' class='partnernav__dropdown-item'>Avaliability Manager</a>"+
                                 "</div>"+
