@@ -104,10 +104,10 @@
                             "</div>"+
                         "</div>"+
 
-                        // "<a href='#reservation/avaliability' target='_blank' class='partnernav__link'>"+
-                        //     "<i class='bx bx-usb partnernav__icon' ></i>"+
-                        //     "<span class='partnernav__name'>Avaliability Manager</span>"+
-                        // "</a>"+
+                        "<a href='#reservation/customers' target='_blank' class='partnernav__link'>"+
+                            "<i class='bx bx-user-circle partnernav__icon' ></i>"+
+                            "<span class='partnernav__name'>Customers</span>"+
+                        "</a>"+
                     
                         "<div class='partnernav__dropdown'>"+
                             "<a href='#' class='partnernav__link'>"+
