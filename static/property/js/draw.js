@@ -3048,6 +3048,12 @@ function drawPropertyRules(id, property)
 
         "                       <div class='widget pad-1' style='border: 3px solid rgb(245,245,245);'>" +
         "                           <span style='font-weight: bold;'>Check in time</span><br/><br/>" +
+
+        "                           <label style='margin-bottom: 8px; display: inline-block;'>"+
+        "                            <input id='self-checkin' type='checkbox' data-show='self-checkin'/><span style='font-weight: bold;'>" +
+        "                              Enable Self Checkin" +
+        "                           </span></label>"+
+
         "                           <p style='color: dimgray; font-family: Lato; line-height: 180%;'>" +
         "                               Please specify the check in time for this property. eg. from 12:00 to 1:00." +
         "                           </p><br/>" +
