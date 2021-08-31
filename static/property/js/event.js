@@ -20264,6 +20264,12 @@ function managePropertyFacility(data)
 // manage contact information
 function manageContactInformation(data)
 {
+	// Set default phone number
+	document.getElementById('default-phone').value = data.Owner.Phone;
+	
+	// Set default email
+	document.getElementById('default-email').value = data.Owner.Email;
+
 	// load contact form
 	const contactFormElement = document.querySelectorAll('.contact-form');
 

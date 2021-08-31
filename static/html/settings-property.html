@@ -82,18 +82,26 @@
                 <p style='color: dimgray; font-family: Lato; line-height: 180%;'>
                     Here you can add multiple help lines for reservations, support, booking, etc.
                 </p>
+                <div class='default-form'>
+                    <input type='text' disabled value="Owner Phone"/>
+                    <input type='tel' disabled id='default-phone'/> 
+                </div>
                 <div class='contact-form' data-key="phone"><input type='text' data-key="name" id='contact-name' placeholder='Contact Name'/> <input type='tel' data-key="value" id='contact-phone' placeholder='Contact Phone. e.g 0801...'/> <button type='button' id='contact-btn-phone'><i class='add icon'></i></button></div>
                 <div class='contact-body' data-key="phone-contact"></div>
             </div>
 
             <div class='widget pad-1' style='border: 3px solid rgb(245,245,245);'>
                 <span style='font-weight: bold;'>Email</span>
-                 <br/><br/>
-                 <p style='color: dimgray; font-family: Lato; line-height: 180%;'>
-                     Here you can add multiple email addresses for reservations, support, booking, etc.
-                 </p>
-                 <div class='contact-form' data-key="email"><input type='text' data-key="name" id='email-name' placeholder='Email Name'/> <input type='email' data-key="value" id='email-address' placeholder='Email Address. e.g support@..'/> <button type='button' id='contact-btn-email'><i class='add icon'></i></button></div>
-                 <div class='contact-body' data-key="email-contact"></div>
+                <br/><br/>
+                <p style='color: dimgray; font-family: Lato; line-height: 180%;'>
+                    Here you can add multiple email addresses for reservations, support, booking, etc.
+                </p>
+                <div class='default-form'>
+                    <input type='text' disabled value="Owner Email"/>
+                    <input type='text' disabled id='default-email'/> 
+                </div>
+                <div class='contact-form' data-key="email"><input type='text' data-key="name" id='email-name' placeholder='Email Name'/> <input type='email' data-key="value" id='email-address' placeholder='Email Address. e.g support@..'/> <button type='button' id='contact-btn-email'><i class='add icon'></i></button></div>
+                <div class='contact-body' data-key="email-contact"></div>
              </div>
              
         </section>

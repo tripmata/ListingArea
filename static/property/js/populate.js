@@ -53,6 +53,7 @@
 						cancellation : d.data.Cancellation,
 						canceldays : d.data.Canceldays,
 						cancelhour : d.data.Cancelhours,
+						canceltime : d.data.Canceltime,
 						damagedeposit : d.data.Damagedeposit,
 						damageamount : d.data.Damagedepositamount,
 						earlycheckout : d.data.Earlycheckout,
@@ -255,13 +256,13 @@
 					$("#phone_info").html(
 						"<i class='bx bx-mobile property_icon'></i>"+
 						"<div class='property_text'>"+
-							"<p>PHONE</p>"+"<span>"+d.data.Phone1+"</span>"+
+							"<p>PHONE</p>"+"<span>"+d.data.Owner.Phone+"</span>"+
 						"</div>"
 					);
 					$("#email_info").html(
 						"<i class='bx bx-mail-send property_icon'></i>"+
 						"<div class='property_text'>"+
-							"<p>EMAIL</p>"+"<span>"+d.data.Email1+"</span>"+
+							"<p>EMAIL</p>"+"<span>"+d.data.Owner.Email+"</span>"+
 						"</div>"
 					);
 					$("#address_info").html(
@@ -301,6 +302,9 @@
 												"</div>"+
 	
 												"<div class='review_date'>"+
+													"<button>"+
+													"<i class='bx bx-reply'></i>"+													
+													" Reply</button>"+
 													"<p>"+Created.MonthName+" "+Created.Day+", "+Created.Year+"</p>"+
 												"</div>"+
 											"</div>";
