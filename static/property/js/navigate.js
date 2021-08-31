@@ -174,6 +174,11 @@
                             "<span class='partnernav__name'>HMS</span>"+
                         "</a>"+
 
+                        "<a href='#messaging' class='partnernav__link'>"+
+                            "<i class='bx bx-envelope partnernav__icon'></i>"+
+                            "<span class='partnernav__name'>Messaging</span>"+
+                        "</a>"+
+
                         "<div class='partnernav__dropdown'>"+
                             "<a href='#' class='partnernav__link'>"+
                                 "<i class='bx bx-user partnernav__icon' ></i>"+
