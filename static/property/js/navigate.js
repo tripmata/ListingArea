@@ -102,12 +102,7 @@
                                     "<a href='#reservation/avaliability' class='partnernav__dropdown-item'>Avaliability Manager</a>"+
                                 "</div>"+
                             "</div>"+
-                        "</div>"+
-
-                        "<a href='#reservation/customers' target='_blank' class='partnernav__link'>"+
-                            "<i class='bx bx-user-circle partnernav__icon' ></i>"+
-                            "<span class='partnernav__name'>Customers</span>"+
-                        "</a>"+
+                        "</div>"+                        
                     
                         "<div class='partnernav__dropdown'>"+
                             "<a href='#' class='partnernav__link'>"+
@@ -137,6 +132,34 @@
                                     "<a href='#halls' class='partnernav__dropdown-item'>Hall List</a>"+
                                     // "<a href='#rooms' class='partnernav__dropdown-item'>Inventory</a>"+
                                     "<a href='#extra-services' class='partnernav__dropdown-item'>Extra Services</a>"+
+                                "</div>"+
+                            "</div>"+
+                        "</div>"+
+                        
+                        // "<a href='#messaging' class='partnernav__link'>"+
+                        //     "<i class='bx bx-envelope partnernav__icon'></i>"+
+                        //     "<span class='partnernav__name'>Messaging</span>"+
+                        // "</a>"+
+
+                        "<a href='#reservation/customers' target='_blank' class='partnernav__link'>"+
+                            "<i class='bx bx-user-circle partnernav__icon' ></i>"+
+                            "<span class='partnernav__name'>Customers</span>"+
+                        "</a>"+
+
+                        "<div class='partnernav__dropdown'>"+
+                            "<a href='#' class='partnernav__link'>"+
+                                "<i class='bx bx-envelope partnernav__icon' ></i>"+
+                                "<span class='partnernav__name'>Messaging</span>"+
+                                "<i class='bx bx-chevron-down partnernav__icon partnernav__dropdown-icon'></i>"+
+                            "</a>"+
+
+                            "<div class='partnernav__dropdown-collapse'>"+
+                                "<div class='partnernav__dropdown-content'>"+
+                                    "<a href='#messaging' class='partnernav__dropdown-item'>E-mail</a>"+
+                                    "<a href='#messaging/sms' class='partnernav__dropdown-item'>SMS</a>"+
+                                    "<a href='#messaging/message-template' class='partnernav__dropdown-item'>Message Template</a>"+
+                                    "<a href='#messaging/contact-list' class='partnernav__dropdown-item'>Contact List</a>"+
+                                    "<a href='#messaging/schedular' class='partnernav__dropdown-item'>Schedular</a>"+
                                 "</div>"+
                             "</div>"+
                         "</div>"+
