@@ -16,5 +16,7 @@
     "idea.png": ".\/.\/system\/Starter\/\/images\/idea.png",
     "moorexa.js": ".\/src\/public\/assets\/js\/\/Rexajs\/moorexa.js",
     "sys\/smiling2.png": ".\/src\/public\/assets\/images\/sys\/smiling2.png",
-    "error.css": ".\/src\/public\/assets\/css\/error.css"
+    "error.css": ".\/src\/public\/assets\/css\/error.css",
+    ".\/\/static\/property\/js\/others\/virtual-select.min.js": ".\/\/static\/property\/js\/others\/virtual-select.min.js",
+    ".\/\/static\/property\/js\/others\/tooltip.min.js": ".\/\/static\/property\/js\/others\/tooltip.min.js"
 }

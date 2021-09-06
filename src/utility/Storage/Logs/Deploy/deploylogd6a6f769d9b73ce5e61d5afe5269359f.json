@@ -1036,5 +1036,11 @@
     ".\/modules\/avaliability\/src\/TableDisplay.php": 1624956659,
     ".\/modules\/avaliability\/inc\/index.phtml": 1624956659,
     ".\/static\/css\/menu.css": 1630400068,
-    ".\/static\/css\/partner.css": 1630408563
+    ".\/static\/css\/partner.css": 1630408563,
+    ".\/\/static\/property\/js\/draw.js": 1630930416,
+    ".\/\/static\/css\/custom-select.css": 1630585304,
+    ".\/\/static\/css\/menu.css": 1630574131,
+    ".\/\/static\/property\/js\/navigate.js": 1630931385,
+    ".\/\/static\/property\/js\/populate.js": 1630928766,
+    ".\/\/app\/Manager\/property.bundle.json": 1630585415
 }

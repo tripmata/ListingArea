@@ -83,7 +83,7 @@
                         "</a>"+
 
                         "<a href='"+phpvars.FRONTDESK_MANAGER+"' target='_blank' class='partnernav__link'>"+
-                            "<i class='bx bx-bed partnernav__icon' ></i>"+
+                            "<i class='bx bx-street-view partnernav__icon' ></i>"+
                             "<span class='partnernav__name'>FrontDesk Manager</span>"+
                         "</a>"+
 
@@ -141,7 +141,7 @@
                         //     "<span class='partnernav__name'>Messaging</span>"+
                         // "</a>"+
 
-                        "<a href='#reservation/customers' target='_blank' class='partnernav__link'>"+
+                        "<a href='#reservation/customers' class='partnernav__link'>"+
                             "<i class='bx bx-user-circle partnernav__icon' ></i>"+
                             "<span class='partnernav__name'>Customers</span>"+
                         "</a>"+
@@ -174,10 +174,10 @@
                             "<span class='partnernav__name'>HMS</span>"+
                         "</a>"+
 
-                        "<a href='#messaging' class='partnernav__link'>"+
-                            "<i class='bx bx-envelope partnernav__icon'></i>"+
-                            "<span class='partnernav__name'>Messaging</span>"+
-                        "</a>"+
+                        // "<a href='#messaging' class='partnernav__link'>"+
+                        //     "<i class='bx bx-envelope partnernav__icon'></i>"+
+                        //     "<span class='partnernav__name'>Messaging</span>"+
+                        // "</a>"+
 
                         "<div class='partnernav__dropdown'>"+
                             "<a href='#' class='partnernav__link'>"+
@@ -237,7 +237,7 @@
 
         DrawNav();
         if (page === "") {
-                location.hash = "#property";
+            location.hash = "#property";
             DrawProperty();
         }
 
@@ -465,33 +465,34 @@
 
         $('body').css("background-color", "white");
 
-        $("#min-menue-con").html(
-            "<div>" +
-            "   <div class='ui menu' style='border-radius: 0; box-shadow: none; border: 0;'>" +
-            "       <div class='header blue item' style='border-radius: 0; background-color: rgb(0,100,140);opacity: 0.5; color: white;'>" +
-            "           <i class='calendar alternate outline icon'></i> Manage Bookings" +
-            "       </div>" +
-            "       <a href='#reservation' class='item "+(arg == null ? "active" : "")+"'>" +
-            "           Reservations" +
-            "       </a>" +
-            "       <a href='#reservation/customers' class='item "+(arg == "customers" ? "active" : "")+"'>" +
-            "           Customers" +
-            "       </a>" +
-            "       <a href='#reservation/lodging' class='item "+(arg == "lodging" ? "active" : "")+"'>" +
-            "           In house guests" +
-            "       </a>" +
-            "       <a href='"+phpvars.FRONTDESK_MANAGER+"' class='item' target='_blank'>" +
-            "           Front desk" +
-            "       </a>" +
-            "       <a href='#reservation/avaliability' class='item "+(arg == "avaliability" ? "active" : "")+"'>" +
-            "           Avaliability" +
-            "       </a>" +
-            "   </div>" +
-            "</div>");
+        // $("#min-menue-con").html(
+        //     "<div>" +
+        //     "   <div class='ui menu' style='border-radius: 0; box-shadow: none; border: 0;'>" +
+        //     "       <div class='header blue item' style='border-radius: 0; background-color: rgb(0,100,140);opacity: 0.5; color: white;'>" +
+        //     "           <i class='calendar alternate outline icon'></i> Manage Bookings" +
+        //     "       </div>" +
+        //     "       <a href='#reservation' class='item "+(arg == null ? "active" : "")+"'>" +
+        //     "           Reservations" +
+        //     "       </a>" +
+        //     "       <a href='#reservation/customers' class='item "+(arg == "customers" ? "active" : "")+"'>" +
+        //     "           Customers" +
+        //     "       </a>" +
+        //     "       <a href='#reservation/lodging' class='item "+(arg == "lodging" ? "active" : "")+"'>" +
+        //     "           In house guests" +
+        //     "       </a>" +
+        //     "       <a href='"+phpvars.FRONTDESK_MANAGER+"' class='item' target='_blank'>" +
+        //     "           Front desk" +
+        //     "       </a>" +
+        //     "       <a href='#reservation/avaliability' class='item "+(arg == "avaliability" ? "active" : "")+"'>" +
+        //     "           Avaliability" +
+        //     "       </a>" +
+        //     "   </div>" +
+        //     "</div>");
 
         $("#property-page").html(
             "<div>" +
             "<div id='menu'></div>" +
+            "<div id='main-page'></div>" +
             "<div id='page'></div>" +
             "</div>");
 

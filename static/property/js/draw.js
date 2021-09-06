@@ -1502,122 +1502,374 @@ function DrawRatesCalendar()
 
 function DrawReservations()
 {
-    $("#menu").html(
-        "<div class='w3-col l12 m12 s12 pad-1'>" +
+    // $("#menu").html(
+    //     "<div class='w3-col l12 m12 s12 pad-1'>" +
 
-        "<div class='l-pad-2 s-pad-1'>" +
-        "<h3 class='ui header' style='font-family: varela_roundregular; color: dimgray;'>" +
-        "<img src='"+phpvars.CDN_URL+"/images/calendar.png' style='width: 40px; margin-top: 0px;'> Reservations" +
-        "</h3>" +
-        "</div>" +
+    //     "<div class='l-pad-2 s-pad-1'>" +
+    //     "<h3 class='ui header' style='font-family: varela_roundregular; color: dimgray;'>" +
+    //     "<img src='"+phpvars.CDN_URL+"/images/calendar.png' style='width: 40px; margin-top: 0px;'> Reservations" +
+    //     "</h3>" +
+    //     "</div>" +
 
-        "<div class='w3-row'>" +
-        "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
-        "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
-        "<div class='w3-row'>" +
-        "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
-        "<h6 style='text-align: center;'><i class='green calendar alternate outline inverted circular icon'></i></h6>" +
-        "</div>" +
-        "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
-        "<h6 id='due-count' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
-        "<h6 class='' style='text-align: right; color: dimgray; font-family: varela_roundregular; margin-right: 10px;'>Due today" +
-        "</h6>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
-        "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
-        "<div class='w3-row'>" +
-        "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
-        "<h6 style='text-align: center;'>" +
-        "<i class='red calendar inverted times outline circular icon'></i>" +
-        "</h6>" +
-        "</div>" +
-        "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
-        "<h6 id='abandpned-count' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
-        "<h6 class='' style='text-align: right; color: dimgray; font-family: varela_roundregular; margin-right: 10px;'>No show" +
-        "</h6>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>");
+    //     "<div class='w3-row'>" +
+    //     "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
+    //     "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
+    //     "<div class='w3-row'>" +
+    //     "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
+    //     "<h6 style='text-align: center;'><i class='green calendar alternate outline inverted circular icon'></i></h6>" +
+    //     "</div>" +
+    //     "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
+    //     "<h6 id='due-count' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
+    //     "<h6 class='' style='text-align: right; color: dimgray; font-family: varela_roundregular; margin-right: 10px;'>Due today" +
+    //     "</h6>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
+    //     "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
+    //     "<div class='w3-row'>" +
+    //     "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
+    //     "<h6 style='text-align: center;'>" +
+    //     "<i class='red calendar inverted times outline circular icon'></i>" +
+    //     "</h6>" +
+    //     "</div>" +
+    //     "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
+    //     "<h6 id='abandpned-count' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
+    //     "<h6 class='' style='text-align: right; color: dimgray; font-family: varela_roundregular; margin-right: 10px;'>No show" +
+    //     "</h6>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>");
 
 
-    _page({add:"<div class='ui pointing menu'>" +
-            "  <a id='all-reservations' class='active item reserve-tab' onclick='switchReserveTab(this)'>" +
-            "     <i class='circle dot blue outline icon'></i>  All" +
-            "  </a>" +
-            "  <a id='paid-reservations' class='item reserve-tab' onclick='switchReserveTab(this)'>" +
-            "     <i class='green check circle icon'></i> Paid" +
-            "  </a>" +
-            "  <a id='unpaid-reservations' class='item reserve-tab' onclick='switchReserveTab(this)'>" +
-            "     <i class='red times circle icon'></i> Unpaid" +
-            "  </a>" +
-            "  <a id='abandoned-reservation' class='item reserve-tab' onclick='switchReserveTab(this)'>" +
-            "     <i class='red calendar alternate outline icon'></i> No show" +
-            "  </a>" +
-            "    <div class='item'>" +
-            "      <div class='ui transparent icon input'>" +
-            "        <input id='reservation-due-date' type='text' data-toggle='datepicker' " +
-            "             placeholder='Date from' onchange='populateReservations();'>" +
-            "        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
-            "      </div>" +
-            "    </div>" +
+    // _page({add:"<div class='ui pointing menu'>" +
+    //         "  <a id='all-reservations' class='active item reserve-tab' onclick='switchReserveTab(this)'>" +
+    //         "     <i class='circle dot blue outline icon'></i>  All" +
+    //         "  </a>" +
+    //         "  <a id='paid-reservations' class='item reserve-tab' onclick='switchReserveTab(this)'>" +
+    //         "     <i class='green check circle icon'></i> Paid" +
+    //         "  </a>" +
+    //         "  <a id='unpaid-reservations' class='item reserve-tab' onclick='switchReserveTab(this)'>" +
+    //         "     <i class='red times circle icon'></i> Unpaid" +
+    //         "  </a>" +
+    //         "  <a id='abandoned-reservation' class='item reserve-tab' onclick='switchReserveTab(this)'>" +
+    //         "     <i class='red calendar alternate outline icon'></i> No show" +
+    //         "  </a>" +
+    //         "    <div class='item'>" +
+    //         "      <div class='ui transparent icon input'>" +
+    //         "        <input id='reservation-due-date' type='text' data-toggle='datepicker' " +
+    //         "             placeholder='Date from' onchange='populateReservations();'>" +
+    //         "        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
+    //         "      </div>" +
+    //         "    </div>" +
 
-            "    <div class='item'>" +
-            "      <div class='ui transparent icon input'>" +
-            "        <input id='reservation-due-date-range' type='text' data-toggle='datepicker' " +
-            "             placeholder='Date to' onchange='populateReservations();'>" +
-            "        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
-            "      </div>" +
-            "    </div>" +
+    //         "    <div class='item'>" +
+    //         "      <div class='ui transparent icon input'>" +
+    //         "        <input id='reservation-due-date-range' type='text' data-toggle='datepicker' " +
+    //         "             placeholder='Date to' onchange='populateReservations();'>" +
+    //         "        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
+    //         "      </div>" +
+    //         "    </div>" +
 
-            "  <div class='right menu'>" +
-            "    <div class='item'>" +
-            "      <div class='ui transparent icon input'>" +
-            "        <input id='search-txt' type='text' placeholder='Search...' " +
-            "         onkeyup='if(event.keyCode == 13){populateReservations()}'/>" +
-            "        <i class='search link icon'></i>" +
-            "      </div>" +
-            "    </div>" +
-            "  </div>" +
-            "</div>", class:"l-pad-2 s-pad-1 m-pad-1"});
+    //         "  <div class='right menu'>" +
+    //         "    <div class='item'>" +
+    //         "      <div class='ui transparent icon input'>" +
+    //         "        <input id='search-txt' type='text' placeholder='Search...' " +
+    //         "         onkeyup='if(event.keyCode == 13){populateReservations()}'/>" +
+    //         "        <i class='search link icon'></i>" +
+    //         "      </div>" +
+    //         "    </div>" +
+    //         "  </div>" +
+    //         "</div>", class:"l-pad-2 s-pad-1 m-pad-1"});
 
-    _page({add: DrawTable(["Reservation Detail", "Total", "Payment", "Date", "Status", "Action"],
-            {
-                Celled: true, Padded: true, GroupAction: [{ Text: "Cancel reservations", Method: "ConfGroupOrderDelete" }, { Text: "Export CSV", Method: "exportReservationCSV" }]
-            }).outerHTML, class: "l-pad-2"});
+    // _page({add: DrawTable(["Reservation Detail", "Total", "Payment", "Date", "Status", "Action"],
+    //         {
+    //             Celled: true, Padded: true, GroupAction: [{ Text: "Cancel reservations", Method: "ConfGroupOrderDelete" }, { Text: "Export CSV", Method: "exportReservationCSV" }]
+    //         }).outerHTML, class: "l-pad-2"});
 
-    $(".ui.dropdown").dropdown();
+    // $(".ui.dropdown").dropdown();
 
-    new Lightpick({
-        field: document.getElementById('reservation-due-date'),
-        singleDate: true,
-        inline:false,
-        format:"MM/DD/YY",
-        numberOfColumns:1,
-        numberOfMonths:1,
-        onSelect: function(date){
-            populateReservations();
-        }
-    });
+    // new Lightpick({
+    //     field: document.getElementById('reservation-due-date'),
+    //     singleDate: true,
+    //     inline:false,
+    //     format:"MM/DD/YY",
+    //     numberOfColumns:1,
+    //     numberOfMonths:1,
+    //     onSelect: function(date){
+    //         populateReservations();
+    //     }
+    // });
 
-    new Lightpick({
-        field: document.getElementById('reservation-due-date-range'),
-        singleDate: true,
-        inline:false,
-        format:"MM/DD/YY",
-        numberOfColumns:1,
-        numberOfMonths:1,
-        onSelect: function(date){
-            populateReservations();
-        }
-    });
+    // new Lightpick({
+    //     field: document.getElementById('reservation-due-date-range'),
+    //     singleDate: true,
+    //     inline:false,
+    //     format:"MM/DD/YY",
+    //     numberOfColumns:1,
+    //     numberOfMonths:1,
+    //     onSelect: function(date){
+    //         populateReservations();
+    //     }
+    // });
     
+    // populateReservations();
+
+    $('#main-page').html(
+        "<div class='tab__container' id='small-calendar-con' style='margin-top: 20px;height: 100%;'>"+
+			"<div class='tab__summary'>"+
+				"<div class='center__item'>"+
+					"<h3 class='tabname'>Reservations</h3>"+
+				"</div>"+ 
+			
+				"<div class='tabicon__box'>"+
+					"<div class='tab__item'>"+
+						"<div class='tab__icon'>"+                      
+                            "<i class='bx bx-calendar blue'></i>"+
+						"</div>"+
+						"<div class='tab__data'>"+
+							"<p id='due-count'>0</p>"+
+							"<span>Due today</span>"+
+						"</div>"+
+					"</div>"+ 
+					"<div class='tab__item'>"+
+						"<div class='tab__icon'>"+
+                            "<i class='bx bx-calendar-x red'></i>"+
+						"</div>"+
+						"<div class='tab__data'>"+
+							"<p id='abandpned-count'>0</p>"+
+							"<span>No show</span>"+
+						"</div>"+
+					"</div>"+               
+				"</div>"+
+			
+			"</div>"+
+		"</div>"+
+
+        "<div class='l-width-12 w3-col pad-2 reservationtab__filters'>"+
+			// "<input id='default-filter' type='hidden' value='all'>"+
+			// "<input id='payment-filter' type='hidden' value=''>"+
+			// "<input id='source-filter' type='hidden' value='all'>"+
+
+			"<input id='tab-filter' type='hidden' value='all'>"+
+			
+            "<div class='custom__dropdown' id='tab-select'>"+
+                "<div class='dropdown-item'>"+
+                    "<div class='select'>"+
+                    "<span>All</span>"+
+                    "<i class='fa fa-chevron-left'></i>"+
+                    "</div>"+
+                    "<input type='hidden' name='tab'>"+
+                    "<ul class='dropdown-menu' id='tab'>"+
+                    "<li id='all'>All</li>"+
+                    "<li id='abandoned'>No Show</li>"+
+                    "<li id='paid'>Paid</li>"+
+                    "<li id='unpaid'>Unpaid</li>"+
+                    "</ul>"+
+                "</div>"+
+            "</div>"+
+
+			// "<div class='custom__dropdown' id='default-select'>"+
+            //     "<div class='dropdown-item'>"+
+            //         "<div class='select'>"+
+            //         "<span>All</span>"+
+            //         "<i class='fa fa-chevron-left'></i>"+
+            //         "</div>"+
+            //         "<input type='hidden' name='status'>"+
+            //         "<ul class='dropdown-menu' id='default'>"+
+                        // "<li id='all'>All</li>"+
+            //             "<li id='abandoned'>No Show</li>"+
+            //             "<li id='checkedin'>Checked In</li>"+
+            //             "<li id='cancelled'>Cancelled</li>"+
+            //             "<li id='checkedout'>Checked Out</li>"+
+            //         "</ul>"+
+            //     "</div>"+
+            // "</div>"+
+            
+			// "<div class='custom__dropdown' id='payment-select'>"+
+            //     "<div class='dropdown-item'>"+
+            //         "<div class='select'>"+
+            //         "<span>Payment</span>"+
+            //         "<i class='fa fa-chevron-left'></i>"+
+            //         "</div>"+
+            //         "<input type='hidden' name='payment'>"+
+            //         "<ul class='dropdown-menu' id='payment'>"+
+            //             "<li id='paid'>Paid</li>"+
+            //             "<li id='unpaid'>Unpaid</li>"+
+            //             "<li id='partial-paid'>Partial Paid</li>"+
+            //         "</ul>"+
+            //     "</div>"+
+            // "</div>"+
+            
+			// "<div class='custom__dropdown' id='source-select'>"+
+            //     "<div class='dropdown-item'>"+
+            //         "<div class='select'>"+
+            //         "<span>Sources</span>"+
+            //         "<i class='fa fa-chevron-left'></i>"+
+            //         "</div>"+
+            //         "<input type='hidden' name='sources'>"+
+            //         "<ul class='dropdown-menu' id='sources'>"+
+            //             "<li id='walkin'>Walkin</li>"+
+            //             "<li id='online'>Online</li>"+
+            //             "<li id='hotels'>Hotels.ng</li>"+
+            //             "<li id='booking'>Booking.com</li>"+
+            //             "<li id='xpedia'>Xpedia</li>"+
+            //             "<li id='agoda'>Agoda</li>"+
+            //         "</ul>"+
+            //     "</div>"+
+            // "</div>"+
+
+			"<div class='center__item' style='border: 1px solid #ddd;'>"+
+			"      <div class='ui icon input' style='width:100%; height:100%;'>" +
+			"        <input id='reservation-due-date' type='text' data-toggle='datepicker' " +
+			"             placeholder='Date from' onchange='populateReservations();' style='border:none;'>" +
+			"        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
+			"      </div>" +
+			"</div>"+
+
+			"<div class='center__item' style='border: 1px solid #ddd;'>"+
+			"      <div class='ui icon input' style='width:100%; height:100%;'>" +
+			"        <input id='reservation-due-date-range' type='text' data-toggle='datepicker' " +
+			"             placeholder='Date to' onchange='populateReservations();' style='border:none;'>" +
+			"        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
+			"      </div>" +
+			"</div>"+	
+            
+            "<div class='center__item' style='border: 1px solid #ddd;'>"+
+			"      <div class='ui icon input' style='width:100%; height:100%;'>" +
+			"        <input id='search-txt' type='text' placeholder='Search...' " +
+			"         onkeyup='if(event.keyCode == 13){populateReservations();}' style='border:none;'/>" +
+			"        <i class='search link icon' onclick=\"populateReservations()\"></i>" +
+			"      </div>" +
+			"</div>"+
+			
+		"</div>"+
+
+        "<div class='l-pad-2'>"+
+        DrawTable(["Reservation Detail", "Total", "Payment", "Date", "Status", "Action"],
+        {
+            Celled: true, Padded: true, GroupAction: [{ Text: "Cancel reservations", Method: "ConfGroupOrderDelete" }, { Text: "Export CSV", Method: "exportReservationCSV" }]
+        }).outerHTML+
+        "</div>"
+    );
+
+
+    // _page({add: DrawTable(["Reservation Detail", "Total", "Payment", "Date", "Status", "Action"],
+    // {
+    //     Celled: true, Padded: true, GroupAction: [{ Text: "Cancel reservations", Method: "ConfGroupOrderDelete" }, { Text: "Export CSV", Method: "exportReservationCSV" }]
+    // }).outerHTML, class: "l-pad-2"});    
+    
+	$(".ui.dropdown").dropdown();
+
+	new Lightpick({
+		field: document.getElementById('reservation-due-date'),
+		singleDate: true,
+		inline:false,
+		format:"MM/DD/YY",
+		numberOfColumns:1,
+		numberOfMonths:1,
+		onSelect: function(date){
+			let dateObj = new Date(date);
+			let month = (dateObj.getMonth()+1) < 10 ? "0"+(dateObj.getMonth()+1) : (dateObj.getMonth()+1);
+			let day = dateObj.getDate() < 10 ? "0"+dateObj.getDate() : dateObj.getDate();
+			let dateStrg = month+'/'+day+'/'+dateObj.getFullYear().toPrecision().substr(2);
+			$('#reservation-due-date-range').val(dateStrg);
+			// document.getElementById('checkin-due-date-range').removeAttribute('disabled')
+
+			populateReservations();
+		}
+	});
+
+	let dateObj = new Date();
+	let month = (dateObj.getMonth()+1) < 10 ? "0"+(dateObj.getMonth()+1) : (dateObj.getMonth()+1);
+	let day = dateObj.getDate() < 10 ? "0"+dateObj.getDate() : dateObj.getDate();;
+	let dateStrg = month+'/'+day+'/'+dateObj.getFullYear().toPrecision().substr(2);
+	$('#reservation-due-date').val(dateStrg);
+	$('#reservation-due-date-range').val(dateStrg);
+
+	new Lightpick({
+		field: document.getElementById('reservation-due-date-range'),
+		singleDate: true,
+		inline:false,
+		format:"MM/DD/YY",
+		numberOfColumns:1,
+		numberOfMonths:1,
+		onSelect: function(date){
+			populateReservations();
+		}
+	});
+
+    setDropdown();
+
+    // $('.dropdown-menu#default li').click(function () {
+    //     var value = $(this).parents('.dropdown-item').find('input').val();
+    //     console.log(value, 'default');
+	// 	$("#search-txt").val("");
+
+    //     if(value !== ''){
+    //         console.log(value, 'default');
+    //         $('#default-filter').val(value)
+    // 		populateReservations();
+	// 	}
+    // }); 
+
+    // $('.dropdown-menu#payment li').click(function () {
+    //     var value = $(this).parents('.dropdown-item').find('input').val();
+    //     console.log(value, 'payment');
+	// 	$("#search-txt").val("");
+
+    //     if(value !== ''){
+    //         console.log(value, 'payment');
+    //         $('#payment-filter').val(value)
+    // 		populateReservations();
+	// 	}
+    // }); 
+
+    // $('.dropdown-menu#sources li').click(function () {
+    //     var value = $(this).parents('.dropdown-item').find('input').val();
+    //     console.log(value, 'sources');
+	// 	$("#search-txt").val("");
+
+    //     if(value !== ''){
+    //         console.log(value, 'sources');
+    //         $('#source-filter').val(value)
+    // 		populateReservations();
+	// 	}
+    // }); 
+
+    $('.dropdown-menu#tab li').click(function () {
+        var value = $(this).parents('.dropdown-item').find('input').val();
+		$("#search-txt").val("");
+
+        if(value !== ''){
+            $('#tab-filter').val(value)
+    		populateReservations();
+		}
+    }); 
+
     populateReservations();
+}
+
+function setDropdown(){
+    /*Dropdown Menu*/
+    $('.dropdown-item').click(function () {
+        $(this).attr('tabindex', 1).focus();
+        $(this).toggleClass('active');
+        $(this).find('.dropdown-menu').slideToggle(300);
+    });
+    $('.dropdown-item').focusout(function () {
+        $(this).removeClass('active');
+        $(this).find('.dropdown-menu').slideUp(300);
+    });
+    $('.dropdown-item .dropdown-menu li').click(function () {
+        $(this).parents('.dropdown-item').find('span').text($(this).text());
+        $(this).parents('.dropdown-item').find('input').attr('value', $(this).attr('id'));
+    });
+    /*End Dropdown Menu*/
 }
 
 function DrawReservation()
@@ -1714,124 +1966,288 @@ function DrawReservation()
 
 function DrawLoging()
 {
-    $("#menu").html(
-        "<div class='w3-row'>" +
+    // $("#menu").html(
+    //     "<div class='w3-row'>" +
 
-        "<div class='l-pad-2 s-pad-1'>" +
-        "<h3 class='ui header' style='font-family: varela_roundregular; color: dimgray;'>" +
-        "<img src='"+phpvars.CDN_URL+"/images/group.png' style='width: 40px; margin-top: 0px;'> In house guests" +
-        "</h3>" +
-        "</div>" +
+    //     "<div class='l-pad-2 s-pad-1'>" +
+    //     "<h3 class='ui header' style='font-family: varela_roundregular; color: dimgray;'>" +
+    //     "<img src='"+phpvars.CDN_URL+"/images/group.png' style='width: 40px; margin-top: 0px;'> In house guests" +
+    //     "</h3>" +
+    //     "</div>" +
 
-        "<div class='w3-col l12 m12 s12 pad-1'>" +
-        "<div class='w3-row'>" +
-        "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
-        "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
-        "<div class='w3-row'>" +
-        "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
-        "<h6 style='text-align: center;'><i class='green bed inverted circular icon'></i></h6>" +
-        "</div>" +
-        "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
-        "<h6 id='inhouse-count' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
-        "<h6 style='text-align: right; font-family: varela_roundregular; color: dimgray; margin-right: 10px;'>In house guests" +
-        "</h6>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
-        "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
-        "<div class='w3-row'>" +
-        "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
-        "<h6 style='text-align: center;'><i class='blue calendar inverted alternate outline circular icon'></i></h6>" +
-        "</div>" +
-        "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
-        "<h6 id='todays-checkin-count' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
-        "<h6 style='text-align: right; font-family: varela_roundregular; color: dimgray; margin-right: 10px;'>Today's check-ins" +
-        "</h6>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
-        "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
-        "<div class='w3-row'>" +
-        "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
-        "<h6 style='text-align: center;'><i class='red calendar inverted alternate outline circular icon'></i></h6>" +
-        "</div>" +
-        "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
-        "<h6 id='todays-checkout-count' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
-        "<h6 style='text-align: right; font-family: varela_roundregular; color: dimgray; margin-right: 10px;'>Today's check-outs" +
-        "</h6>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
-        "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
-        "<div class='w3-row'>" +
-        "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
-        "<h6 style='text-align: center;'><i class='yellow bed inverted circular icon'></i></h6>" +
-        "</div>" +
-        "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
-        "<h6 id='overdue-stay' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
-        "<h6 style='text-align: right; font-family: varela_roundregular; color: dimgray; margin-right: 10px;'>Overdue" +
-        "</h6>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>");
+    //     "<div class='w3-col l12 m12 s12 pad-1'>" +
+    //     "<div class='w3-row'>" +
+    //     "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
+    //     "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
+    //     "<div class='w3-row'>" +
+    //     "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
+    //     "<h6 style='text-align: center;'><i class='green bed inverted circular icon'></i></h6>" +
+    //     "</div>" +
+    //     "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
+    //     "<h6 id='inhouse-count' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
+    //     "<h6 style='text-align: right; font-family: varela_roundregular; color: dimgray; margin-right: 10px;'>In house guests" +
+    //     "</h6>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
+    //     "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
+    //     "<div class='w3-row'>" +
+    //     "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
+    //     "<h6 style='text-align: center;'><i class='blue calendar inverted alternate outline circular icon'></i></h6>" +
+    //     "</div>" +
+    //     "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
+    //     "<h6 id='todays-checkin-count' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
+    //     "<h6 style='text-align: right; font-family: varela_roundregular; color: dimgray; margin-right: 10px;'>Today's check-ins" +
+    //     "</h6>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
+    //     "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
+    //     "<div class='w3-row'>" +
+    //     "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
+    //     "<h6 style='text-align: center;'><i class='red calendar inverted alternate outline circular icon'></i></h6>" +
+    //     "</div>" +
+    //     "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
+    //     "<h6 id='todays-checkout-count' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
+    //     "<h6 style='text-align: right; font-family: varela_roundregular; color: dimgray; margin-right: 10px;'>Today's check-outs" +
+    //     "</h6>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "<div class='w3-col l12 m12 s12' style='margin-top: 10px;'>" +
+    //     "<div class='widget curve wix-textbox l-width-xl m-width-l' style='border: 1px solid rgb(230,230,230);'>" +
+    //     "<div class='w3-row'>" +
+    //     "<div class='w3-col l4 m4 s4 pad-1' style='border-right: 1px solid lightgray;'>" +
+    //     "<h6 style='text-align: center;'><i class='yellow bed inverted circular icon'></i></h6>" +
+    //     "</div>" +
+    //     "<div class='w3-col l8 m8 s8 pad-t' style=''>" +
+    //     "<h6 id='overdue-stay' class='sleak' style='text-align: right; font-weight: bold; margin-right: 10px;'>0</h6>" +
+    //     "<h6 style='text-align: right; font-family: varela_roundregular; color: dimgray; margin-right: 10px;'>Overdue" +
+    //     "</h6>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>" +
+    //     "</div>");
 
-    _page({add:"<div class='ui pointing menu'>" +
-            "  <a id='all-guest-tab' class='active item guest-tab' onclick=\"switchGuestTab(this)\">" +
-            "     All" +
-            "  </a>" +
+    // _page({add:"<div class='ui pointing menu'>" +
+    //         "  <a id='all-guest-tab' class='active item guest-tab' onclick=\"switchGuestTab(this)\">" +
+    //         "     All" +
+    //         "  </a>" +
             
-            "  <a id='due-checkout-tab' class='item guest-tab' onclick='switchGuestTab(this)'>" +
-            "     <i class='green calendar alternate outline icon'></i> Due check-out" +
-            "  </a>" +
+    //         "  <a id='due-checkout-tab' class='item guest-tab' onclick='switchGuestTab(this)'>" +
+    //         "     <i class='green calendar alternate outline icon'></i> Due check-out" +
+    //         "  </a>" +
 
-            "  <a id='overdue-tab' class='item guest-tab' onclick='switchGuestTab(this)'>" +
-            "     <i class='red calendar times outline icon'></i> Overdue" +
-            "  </a>" +
+    //         "  <a id='overdue-tab' class='item guest-tab' onclick='switchGuestTab(this)'>" +
+    //         "     <i class='red calendar times outline icon'></i> Overdue" +
+    //         "  </a>" +
 
-            "    <div class='item'>" +
-            "      <div class='ui transparent icon input'>" +
-            "        <input id='guest-due-date' type='text' data-toggle='datepicker' " +
-            "             placeholder='Date from' onchange='populateGuests();'>" +
-            "        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
-            "      </div>" +
-            "    </div>" +
+    //         "    <div class='item'>" +
+    //         "      <div class='ui transparent icon input'>" +
+    //         "        <input id='guest-due-date' type='text' data-toggle='datepicker' " +
+    //         "             placeholder='Date from' onchange='populateGuests();'>" +
+    //         "        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
+    //         "      </div>" +
+    //         "    </div>" +
 
-            "    <div class='item'>" +
-            "      <div class='ui transparent icon input'>" +
-            "        <input id='guest-due-date-range' type='text' data-toggle='datepicker' " +
-            "             placeholder='Date to' onchange='populateGuests();'>" +
-            "        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
-            "      </div>" +
-            "    </div>" +
+    //         "    <div class='item'>" +
+    //         "      <div class='ui transparent icon input'>" +
+    //         "        <input id='guest-due-date-range' type='text' data-toggle='datepicker' " +
+    //         "             placeholder='Date to' onchange='populateGuests();'>" +
+    //         "        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
+    //         "      </div>" +
+    //         "    </div>" +
 
-            "  <div class='right menu'>" +
-            "    <div class='item'>" +
-            "      <div class='ui transparent icon input'>" +
-            "        <input id='search-txt' type='text' placeholder='Search...' onkeyup='if(event.keyCode == 13){populateGuests();}'>" +
-            "        <i class='search link icon'></i>" +
-            "      </div>" +
-            "    </div>" +
-            "  </div>" +
-            "</div>", class:"l-pad-2 s-pad-1 m-pad-1"})
+    //         "  <div class='right menu'>" +
+    //         "    <div class='item'>" +
+    //         "      <div class='ui transparent icon input'>" +
+    //         "        <input id='search-txt' type='text' placeholder='Search...' onkeyup='if(event.keyCode == 13){populateGuests();}'>" +
+    //         "        <i class='search link icon'></i>" +
+    //         "      </div>" +
+    //         "    </div>" +
+    //         "  </div>" +
+    //         "</div>", class:"l-pad-2 s-pad-1 m-pad-1"})
 
 
-    _page({
-        add: DrawTable(["Guest", "Checkin-checkout", "Room(s)", "Adults", "Payment", "Balances","Bill"],
-            {
-                Celled: true, Padded: true, GroupAction: [{ Text: "Export CSV", Method: "exportCheckCSV"}]
-            }).outerHTML, class: "l-pad-2"
-    });
+    // _page({
+    //     add: DrawTable(["Guest", "Checkin-checkout", "Room(s)", "Adults", "Payment", "Balances","Bill"],
+    //         {
+    //             Celled: true, Padded: true, GroupAction: [{ Text: "Export CSV", Method: "exportCheckCSV"}]
+    //         }).outerHTML, class: "l-pad-2"
+    // });
 
+
+    // let referenceCon = document.createElement("div");
+    // referenceCon.className = "l-pad-2";
+    // referenceCon.style.backgroundColor = "transparent";
+
+    // let refTable = document.createElement("table");
+    // refTable.className = "ui very basic table";
+    // refTable.style.backgroundColor = "transparent;"
+    // refTable.innerHTML = "<tr>" +
+    //     "<td style='border-bottom: none;'><i class='green user circle circular icon' data-content='Guest customer'></i> New guest </td>" +
+    //     "<td><i class='blue refresh circular icon' data-content='Guest customer'></i> Re-lodging </td>" +
+    //     "<td><i class='yellow group circular icon' data-content='Guest customer'></i> Has sub guest </td>" +
+    //     "<td><i class='red bed circular icon' data-content='Repeated customer'></i> Multiple rooms </td>" +
+    //     "<td><i class='blue paw circular icon' data-content='Repeated customer'></i> Has pet </td>" +
+    //     "</tr>";
+
+
+    // //referenceCon.appendChild(refTable);
+    // //_page({ add: referenceCon });
+
+    // $(".ui.dropdown").dropdown();
+
+
+    // new Lightpick({
+    //     field: document.getElementById('guest-due-date'),
+    //     singleDate: true,
+    //     inline:false,
+    //     format:"MM/DD/YY",
+    //     numberOfColumns:1,
+    //     numberOfMonths:1,
+    //     onSelect: function(date){
+    //         populateGuests();
+    //     }
+    // });
+
+    // new Lightpick({
+    //     field: document.getElementById('guest-due-date-range'),
+    //     singleDate: true,
+    //     inline:false,
+    //     format:"MM/DD/YY",
+        
+    //     numberOfColumns:1,
+    //     numberOfMonths:1,
+    //     onSelect: function(date){
+    //         populateGuests();
+    //     }
+    // });
+
+    // populateGuests();
+
+
+    $('#main-page').html(        
+        "<div class='tab__container' id='small-calendar-con' style='margin-top: 20px;'>"+
+			"<div class='tab__summary'>"+
+				"<div class='center__item'>"+
+					"<h3 class='tabname'>In-house Guests</h3>"+
+				"</div>"+ 
+
+				"<div class='tabicon__box'>"+
+					"<div class='tab__item'>"+
+						"<div class='tab__icon'>"+                            
+                            "<i class='bx bx-hotel green'></i>"+
+                        "</div>"+
+						"<div class='tab__data'>"+
+							"<p id='inhouse-count'>0</p>"+
+							"<span>In house guests</span>"+
+						"</div>"+
+					"</div>"+ 
+					"<div class='tab__item'>"+
+						"<div class='tab__icon'>"+
+                            "<i class='bx bx-calendar blue'></i>"+
+						"</div>"+
+						"<div class='tab__data'>"+
+							"<p id='todays-checkin-count'>0</p>"+
+							"<span>Today's arrival</span>"+
+						"</div>"+
+					"</div>"+               
+					"<div class='tab__item'>"+
+						"<div class='tab__icon'>"+                        
+                            "<i class='bx bx-calendar red'></i>"+
+						"</div>"+
+						"<div class='tab__data'>"+
+							"<p id='todays-checkout-count'>0</p>"+
+							"<span>Today's check-outs</span>"+
+						"</div>"+
+					"</div>"+  
+                    "<div class='tab__item'>"+
+						"<div class='tab__icon'>"+                        
+                            "<i class='bx bx-time yellow'></i>"+
+						"</div>"+
+						"<div class='tab__data'>"+
+							"<p id='due-departure'>0</p>"+
+							"<span>Due Departure</span>"+
+						"</div>"+
+					"</div>"+ 
+                    "<div class='tab__item'>"+
+						"<div class='tab__icon'>"+                        
+                            "<i class='bx bx-timer red'></i>"+
+						"</div>"+
+						"<div class='tab__data'>"+
+							"<p id='overdue-stay'>0</p>"+
+							"<span>Overdue</span>"+
+						"</div>"+
+					"</div>"+                                  
+				"</div>"+    
+
+			"</div>"+
+		"</div>"+
+
+        "<div class='l-width-12 w3-col pad-2 reservationtab__filters'>"+
+
+			"<input id='tab-filter' type='hidden' value='all'>"+
+			
+            "<div class='custom__dropdown' id='tab-select'>"+
+                "<div class='dropdown-item'>"+
+                    "<div class='select'>"+
+                    "<span>All</span>"+
+                    "<i class='fa fa-chevron-left'></i>"+
+                    "</div>"+
+                    "<input type='hidden' name='tab'>"+
+                    "<ul class='dropdown-menu' id='tab'>"+
+                    "<li id='all'>All</li>"+
+                    "<li id='overdue-check-out'>Overdue</li>"+
+                    "<li id='due-departure'>Today\'s Depature</li>"+
+                    "<li id='arrived-today'>Today\' Arrival</li>"+
+                    // "<li id='in-house'>In house</li>"+                    
+                    // "<li id='due-check-out'>Due check-out</li>"+
+                    "</ul>"+
+                "</div>"+
+            "</div>"+
+
+            "<div class='center__item' style='border: 1px solid #ddd;'>"+
+			"      <div class='ui icon input' style='width:100%; height:100%;'>" +
+			"        <input id='guest-due-date' type='text' data-toggle='datepicker' " +
+			"             placeholder='Date from' onchange='populateGuests();' style='border:none;'>" +
+			"        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
+			"      </div>" +
+			"</div>"+
+
+			"<div class='center__item' style='border: 1px solid #ddd;'>"+
+			"      <div class='ui icon input' style='width:100%; height:100%;'>" +
+			"        <input id='guest-due-date-range' type='text' data-toggle='datepicker' " +
+			"             placeholder='Date to' onchange='populateGuests();' style='border:none;'>" +
+			"        <i id='reservation-cancel-btn' class='blue calendar alternate outline icon' onclick='cancelDate()'></i>" +
+			"      </div>" +
+			"</div>"+	
+            
+            "<div class='center__item' style='border: 1px solid #ddd;'>"+
+			"      <div class='ui icon input' style='width:100%; height:100%;'>" +
+			"        <input id='search-txt' type='text' placeholder='Search...' " +
+			"         onkeyup='if(event.keyCode == 13){populateGuests();}' style='border:none;'/>" +
+			"        <i class='search link icon' onclick=\"populateReservations()\"></i>" +
+			"      </div>" +
+			"</div>"+
+			
+		"</div>"+
+
+        "<div class='l-pad-2'>"+
+        DrawTable(["Guest", "Checkin-checkout", "Room(s)", "Adults", "Payment", "Balances","Bill"],
+        {
+            Celled: true, Padded: true, GroupAction: [{ Text: "Export CSV", Method: "exportCheckCSV"}]
+        }).outerHTML+
+		"</div>"
+    );
 
     let referenceCon = document.createElement("div");
     referenceCon.className = "l-pad-2";
@@ -1848,39 +2264,58 @@ function DrawLoging()
         "<td><i class='blue paw circular icon' data-content='Repeated customer'></i> Has pet </td>" +
         "</tr>";
 
-
-    //referenceCon.appendChild(refTable);
-    //_page({ add: referenceCon });
-
     $(".ui.dropdown").dropdown();
 
+	new Lightpick({
+		field: document.getElementById('guest-due-date'),
+		singleDate: true,
+		inline:false,
+		format:"MM/DD/YY",
+		numberOfColumns:1,
+		numberOfMonths:1,
+		onSelect: function(date){
+            // let dateObj = new Date(date);
+			// let month = (dateObj.getMonth()+1) < 10 ? "0"+(dateObj.getMonth()+1) : (dateObj.getMonth()+1);
+			// let day = dateObj.getDate() < 10 ? "0"+dateObj.getDate() : dateObj.getDate();
+			// let dateStrg = month+'/'+day+'/'+dateObj.getFullYear().toPrecision().substr(2);
+			// $('#guest-due-date-range').val(dateStrg);
+			// document.getElementById('checkin-due-date-range').removeAttribute('disabled')
+			populateGuests();
+		}
+	});
 
-    new Lightpick({
-        field: document.getElementById('guest-due-date'),
-        singleDate: true,
-        inline:false,
-        format:"MM/DD/YY",
-        numberOfColumns:1,
-        numberOfMonths:1,
-        onSelect: function(date){
-            populateGuests();
-        }
-    });
+    // let dateObj = new Date();
+	// let month = (dateObj.getMonth()+1) < 10 ? "0"+(dateObj.getMonth()+1) : (dateObj.getMonth()+1);
+	// let day = dateObj.getDate() < 10 ? "0"+dateObj.getDate() : dateObj.getDate();;
+	// let dateStrg = month+'/'+day+'/'+dateObj.getFullYear().toPrecision().substr(2);
+	// $('#guest-due-date').val(dateStrg);
+	// $('#guest-due-date-range').val(dateStrg);
 
-    new Lightpick({
-        field: document.getElementById('guest-due-date-range'),
-        singleDate: true,
-        inline:false,
-        format:"MM/DD/YY",
-        
-        numberOfColumns:1,
-        numberOfMonths:1,
-        onSelect: function(date){
-            populateGuests();
-        }
-    });
+	new Lightpick({
+		field: document.getElementById('guest-due-date-range'),
+		singleDate: true,
+		inline:false,
+		format:"MM/DD/YY",
+		numberOfColumns:1,
+		numberOfMonths:1,
+		onSelect: function(date){
+			populateGuests();
+		}
+	});
 
-    populateGuests();
+    setDropdown();
+
+    $('.dropdown-menu#tab li').click(function () {
+        var value = $(this).parents('.dropdown-item').find('input').val();
+		$("#search-txt").val("");
+
+        if(value !== ''){
+            $('#tab-filter').val(value)
+    		populateGuests();
+		}
+    }); 
+
+    populateGuests();               
 }
 
 function DrawCustomers()

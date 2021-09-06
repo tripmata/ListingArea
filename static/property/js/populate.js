@@ -512,22 +512,24 @@
 		request.job = "get-reservations";
 		request.property = $("#property-id").val();
 
-		request.tab = "all";
+		// request.tab = "all";
 		request.dueDate = $("#reservation-due-date").val();
 		request.dueDateTo = $("#reservation-due-date-range").val();
 
-		if($("#paid-reservations").hasClass("active"))
-		{
-			request.tab = "paid";
-		}
-		else if($("#unpaid-reservations").hasClass("active"))
-		{
-			request.tab = "unpaid";
-		}
-		else if($("#abandoned-reservation").hasClass("active"))
-		{
-			request.tab = "abandoned";
-		}
+		request.tab = $('#tab-filter').val()
+
+		// if($("#paid-reservations").hasClass("active"))
+		// {
+		// 	request.tab = "paid";
+		// }
+		// else if($("#unpaid-reservations").hasClass("active"))
+		// {
+		// 	request.tab = "unpaid";
+		// }
+		// else if($("#abandoned-reservation").hasClass("active"))
+		// {
+		// 	request.tab = "abandoned";
+		// }
 
 
 		if(Number(page) > 0)
@@ -1165,20 +1167,21 @@
 		request.dueDate = $('#guest-due-date').val();
 		request.dueDateTo = $('#guest-due-date-range').val();
 
-		request.tab = "all";
-
-		if($("#inhouse-guest-tab").hasClass("active"))
-		{
-			request.tab = "in-house";
-		}
-		else if($("#due-checkout-tab").hasClass("active"))
-		{
-			request.tab = "due-check-out";
-		}
-		else if($("#overdue-tab").hasClass("active"))
-		{
-			request.tab = "overdue-check-out";
-		}
+		// request.tab = "all";
+		request.tab = $('#tab-filter').val();
+		
+		// if($("#inhouse-guest-tab").hasClass("active"))
+		// {
+		// 	request.tab = "in-house";
+		// }
+		// else if($("#due-checkout-tab").hasClass("active"))
+		// {
+		// 	request.tab = "due-check-out";
+		// }
+		// else if($("#overdue-tab").hasClass("active"))
+		// {
+		// 	request.tab = "overdue-check-out";
+		// }
 
 
 		if(Number(page) > 0)
@@ -1207,6 +1210,7 @@
 					$("#todays-checkin-count").html(d.today);
 					$("#todays-checkout-count").html(d.todayCheckout);
 					$("#overdue-stay").html(d.overdue);
+					$("#due-departure").html(d.departureToday);					
 
 					if(d.data.length === 0)
 					{
@@ -1268,13 +1272,13 @@
 
 						let td5 = document.createElement("td");
 						td5.innerHTML = "<span style='color: silver;'>Total: </span><span style='color: dimgray;'> &#8358; "+
-							numFormat(((Number(d.data[i].Total) + Number(d.data[i].Bills)) - Number(d.data[i].Discount)).toFixed(2))+"</span><br/>" +
+							numFormat((Number(d.data[i].Total)).toFixed(2))+"</span><br/>" +
 							"<span style='color: silver;'>Deposit: </span><span style='color: dimgray;'>&#8358; "+
 							(numFormat(Number(d.data[i].Paidamount).toFixed(2)))+"</span>";
 
 
-						let balance = (((Number(d.data[i].Total) - Number(d.data[i].Discount)) + Number(d.data[i].Bills)) - (Number(d.data[i].Paidamount)));
-						let rebate = ((Number(d.data[i].Paidamount)) - ((Number(d.data[i].Total) - Number(d.data[i].Discount)) + Number(d.data[i].Bills)));
+						let balance = ((Number(d.data[i].Total) + Number(d.data[i].Bills)) - (Number(d.data[i].Paidamount)));
+						let rebate = ((Number(d.data[i].Paidamount)) - (Number(d.data[i].Total) + Number(d.data[i].Bills)));
 
 						let td6 = document.createElement("td");
 						td6.innerHTML = "<span style='color: silver;'>Balance: </span><span style='color: dimgray;'> &#8358; "+
